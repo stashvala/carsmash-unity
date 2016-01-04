@@ -6,4 +6,6 @@ public class CustomConfig : GameManagerObject {
 
 	public string test = "H1";
 
+	public PlayerConfig[] playersConfig;
+
 }

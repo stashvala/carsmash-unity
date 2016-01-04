@@ -3,11 +3,18 @@ using System.Collections;
 using com.FDT.GameManagerFramework;
 using UnityEngine.UI;
 
-class PlayerConfig
+public class PlayerConfig
 {
-	public PlayerConfig (int i, string text)
+
+	public int id;
+	public string name;
+	public int lives;
+
+	public PlayerConfig (int id, string name, int lives)
 	{
-		throw new System.NotImplementedException ();
+		this.id = id;
+		this.name = name;
+		this.lives = lives;
 	}
 }
 

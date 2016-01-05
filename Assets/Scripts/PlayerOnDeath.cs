@@ -31,7 +31,7 @@ public class PlayerOnDeath : MonoBehaviour {
 		if (playerSelfManager.leftLives > 0) {
 			playerSelfManager.leftLives-= 1; 
 			gameObject.transform.position = playerSelfManager.respawnPoint;
-			//gameObject.transform.rotation.Set(0,0,0,0); todo: fix
+			gameObject.transform.rotation.Set(0,0,0,1);
 		} else {
 			gameObject.SetActive(false);
 			gameObject.transform.position = inactivePosition;

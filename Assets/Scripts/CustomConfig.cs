@@ -8,4 +8,6 @@ public class CustomConfig : GameManagerObject {
 
 	public PlayerConfig[] playersConfig;
 
+	public int winnerId;
+
 }

@@ -12,6 +12,11 @@ public class LevelManager : MonoBehaviour {
 	[SerializeField] private GameObject[] players = new GameObject[4];
 	[SerializeField] private GameObject[] playersHUD = new GameObject[4];
 
+	[SerializeField] private string endGameSceneName;
+
+	private CustomConfig config;
+
+
 	private PlayerConfig[] debugPlayersConfig = new PlayerConfig[]{
 		new PlayerConfig(0, "Bob", 2), new PlayerConfig(1, "Job", 2), 
 		new PlayerConfig(2, "Blue", 2), new PlayerConfig(3, "Dr.Ultra", 2),
@@ -21,8 +26,7 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-		CustomConfig config = (CustomConfig) GameManager.Instance.gameManagerObject;
+		config = (CustomConfig) GameManager.Instance.gameManagerObject;
 
 		PlayerConfig[] playersConfig = config.playersConfig;
 		if (playersConfig == null) { // for debug purposes, so this scene can be started standalone
@@ -56,8 +60,24 @@ public class LevelManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		// prever ce je se zmerej veljavna igra (imajo ljudje zivljenja)
-		// ce ne koncaj in daj na winner sceno
-	
+		int numberOfPlayersAlive = 0;
+		int potentialWinnerId = 0;
+		for (int i = 0; i < players.Length; i++) {
+				PlayerSelfManager psd = players[i].transform.Find ("PlayerData").GetComponent<PlayerSelfManager>();
+				if (psd.leftLives > 0) {
+					numberOfPlayersAlive += 1;
+					potentialWinnerId = i;
+				}
+		}
+
+		if (numberOfPlayersAlive <= 1) {
+			EndGame (potentialWinnerId);
+		}
+	}
+
+	void EndGame(int winnerId) {
+		// switch to end scene
+		config.winnerId = winnerId;
+		GameManager.Instance.LoadLevel (endGameSceneName);
 	}
 }

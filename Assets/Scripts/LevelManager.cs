@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour {
 
 		for (int i = 0; i < playersConfig.Length; i++) {
 			if (playersConfig[i] != null) {
-				Vector3 spawnPoint = players[i].transform.position; // avto je ze na svojmu startu
+				Vector3 spawnPoint = players[i].transform.position + new Vector3(0, 10, 0); // avto je ze na svojmu startu
 				Vector3 respawnPoint = customRespawnPoints ? respawnPositions[i] : spawnPoint; 
 				int lives = playersConfig[i].lives;
 				int id = playersConfig[i].id;

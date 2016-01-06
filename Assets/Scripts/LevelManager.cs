@@ -46,12 +46,14 @@ public class LevelManager : MonoBehaviour {
 				pd.spawnPoint = spawnPoint;
 				pd.respawnPoint = respawnPoint;
 				pd.isPlaying = true;
+				pd.spawnFacing = players[i].transform.rotation;
 				playerSelfManagers[i] = pd;
 				EditorUtility.SetDirty(pd);
 			} else {
 				playersHUD[i].SetActive(false);
 				players[i].SetActive(false);
-				players[i].transform.position = inactivePosition;
+				//players[i].transform.position = inactivePosition;
+				players[i].transform.eulerAngles = Vector3.zero;
 			}
 
 		}

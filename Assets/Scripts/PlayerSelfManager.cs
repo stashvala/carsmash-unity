@@ -12,6 +12,8 @@ public class PlayerSelfManager : MonoBehaviour {
 	public Vector3 respawnPoint;
 	public bool isPlaying = false;
 
+	public Quaternion spawnFacing;
+
 	private GameObject parent;
 	
 	private Vector3 inactivePosition = new Vector3(-100, -100, -100);
@@ -42,7 +44,7 @@ public class PlayerSelfManager : MonoBehaviour {
 		this.leftLives-= 1; 
 		if (leftLives >= 0) {
 			gameObject.transform.position = respawnPoint;
-			gameObject.transform.rotation.Set(0,0,0,1);
+			gameObject.transform.eulerAngles = Vector3.zero;
 		} else {
 			gameObject.SetActive(false);
 			gameObject.transform.position = inactivePosition;

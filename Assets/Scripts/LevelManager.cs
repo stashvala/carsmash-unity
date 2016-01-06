@@ -4,9 +4,7 @@ using com.FDT.GameManagerFramework;
 using UnityEditor;
 
 public class LevelManager : MonoBehaviour {
-
-	private Vector3 inactivePosition = new Vector3(-100, -100, -100);
-
+	
 	[SerializeField] private bool customRespawnPoints = false;
 	[SerializeField] private Vector3[] respawnPositions = new Vector3[4];
 	[SerializeField] private GameObject[] players = new GameObject[4];
@@ -15,11 +13,12 @@ public class LevelManager : MonoBehaviour {
 	[SerializeField] private string endGameSceneName;
 
 	private CustomConfig config;
-
+	private Vector3 inactivePosition = new Vector3(-100, -100, -100);
+	private PlayerSelfManager[] playerSelfManagers = new PlayerSelfManager[4];
 
 	private PlayerConfig[] debugPlayersConfig = new PlayerConfig[]{
-		new PlayerConfig(0, "Bob", 2), new PlayerConfig(1, "Job", 2), 
-		new PlayerConfig(2, "Blue", 2), new PlayerConfig(3, "Dr.Ultra", 2),
+		new PlayerConfig(0, "Bob", 2), new PlayerConfig(1, "Job", 2), null, null
+		//new PlayerConfig(2, "Blue", 2), new PlayerConfig(3, "Dr.Ultra", 2),
 	};
 
 	// nared se death zone;
@@ -40,13 +39,15 @@ public class LevelManager : MonoBehaviour {
 				int lives = playersConfig[i].lives;
 				int id = playersConfig[i].id;
 
-				PlayerSelfManager pd = players[i].transform.Find ("PlayerData").GetComponent<PlayerSelfManager>();
+				PlayerSelfManager pd = players[i].GetComponent<PlayerSelfManager>();
 				pd.name = playersConfig[i].name;
 				pd.id = id;
 				pd.leftLives = lives;
 				pd.spawnPoint = spawnPoint;
 				pd.respawnPoint = respawnPoint;
-				EditorUtility.SetDirty(players[i].transform.Find ("PlayerData"));
+				pd.isPlaying = true;
+				playerSelfManagers[i] = pd;
+				EditorUtility.SetDirty(pd);
 			} else {
 				playersHUD[i].SetActive(false);
 				players[i].SetActive(false);
@@ -63,11 +64,11 @@ public class LevelManager : MonoBehaviour {
 		int numberOfPlayersAlive = 0;
 		int potentialWinnerId = 0;
 		for (int i = 0; i < players.Length; i++) {
-				PlayerSelfManager psd = players[i].transform.Find ("PlayerData").GetComponent<PlayerSelfManager>();
-				if (psd.leftLives > 0) {
-					numberOfPlayersAlive += 1;
-					potentialWinnerId = i;
-				}
+			PlayerSelfManager psd = playerSelfManagers[i];
+			if 	(psd != null && psd.isPlaying && psd.leftLives >= 0) {
+				numberOfPlayersAlive += 1;
+				potentialWinnerId = i;
+			}
 		}
 
 		if (numberOfPlayersAlive <= 1) {

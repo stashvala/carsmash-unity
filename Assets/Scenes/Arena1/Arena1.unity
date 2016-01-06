@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vertical: VerticalP2
   horizontal: HorizontalP2
---- !u!114 &49874716
+--- !u!114 &49874714
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -253,9 +253,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 49874711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5624ce0ea65b48e5971b0541fa93e01, type: 3}
+  m_Script: {fileID: 11500000, guid: ca93998a22f174a62a0427d29dae8ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
+  id: 0
+  leftLives: 0
+  power: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
+  respawnPoint: {x: 0, y: 0, z: 0}
+  isPlaying: 0
 --- !u!1 &164157379
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +454,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 312627237}
   - 114: {fileID: 312627238}
-  - 114: {fileID: 312627239}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -481,23 +487,6 @@ MonoBehaviour:
   nameField: {fileID: 1123306141}
   leftLivesField: {fileID: 1602579045}
   powerField: {fileID: 1201175433}
---- !u!114 &312627239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 312627236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca93998a22f174a62a0427d29dae8ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  id: 0
-  leftLives: 0
-  power: 0
-  spawnPoint: {x: 0, y: 0, z: 0}
-  respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &335047779
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +910,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 882685631}
   - 114: {fileID: 882685632}
-  - 114: {fileID: 882685633}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -955,23 +943,6 @@ MonoBehaviour:
   nameField: {fileID: 1076410417}
   leftLivesField: {fileID: 1069896604}
   powerField: {fileID: 399742572}
---- !u!114 &882685633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 882685630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca93998a22f174a62a0427d29dae8ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  id: 0
-  leftLives: 0
-  power: 0
-  spawnPoint: {x: 0, y: 0, z: 0}
-  respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &899102478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1062,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 972195957}
   - 114: {fileID: 972195955}
-  - 114: {fileID: 972195956}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -1113,23 +1083,6 @@ MonoBehaviour:
   nameField: {fileID: 1275840613}
   leftLivesField: {fileID: 1915036878}
   powerField: {fileID: 335047781}
---- !u!114 &972195956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 972195954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca93998a22f174a62a0427d29dae8ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  id: 0
-  leftLives: 0
-  power: 0
-  spawnPoint: {x: 0, y: 0, z: 0}
-  respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!4 &972195957
 Transform:
   m_ObjectHideFlags: 0
@@ -1498,7 +1451,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1196403664}
   - 114: {fileID: 1196403666}
-  - 114: {fileID: 1196403665}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -1518,23 +1470,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2113155506}
   m_RootOrder: 6
---- !u!114 &1196403665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1196403663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca93998a22f174a62a0427d29dae8ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
-  id: 0
-  leftLives: 0
-  power: 0
-  spawnPoint: {x: 0, y: 0, z: 0}
-  respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &1196403666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2264,6 +2199,24 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100042, guid: 0e7ee4df08df88c4880f43398f9ad2c2, type: 2}
   m_PrefabInternal: {fileID: 1620725831}
+--- !u!114 &1620725834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620725833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca93998a22f174a62a0427d29dae8ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  id: 0
+  leftLives: 0
+  power: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
+  respawnPoint: {x: 0, y: 0, z: 0}
+  isPlaying: 0
 --- !u!114 &1620725835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2277,17 +2230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vertical: VerticalP4
   horizontal: HorizontalP4
---- !u!114 &1620725838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1620725833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5624ce0ea65b48e5971b0541fa93e01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1678856206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,7 +2553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vertical: VerticalP3
   horizontal: HorizontalP3
---- !u!114 &2040806598
+--- !u!114 &2040806596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2619,9 +2561,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2040806593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5624ce0ea65b48e5971b0541fa93e01, type: 3}
+  m_Script: {fileID: 11500000, guid: ca93998a22f174a62a0427d29dae8ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
+  id: 0
+  leftLives: 0
+  power: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
+  respawnPoint: {x: 0, y: 0, z: 0}
+  isPlaying: 0
 --- !u!1 &2066464229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,7 +2721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vertical: VerticalP1
   horizontal: HorizontalP1
---- !u!114 &2113155510
+--- !u!114 &2113155509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2780,6 +2729,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2113155507}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5624ce0ea65b48e5971b0541fa93e01, type: 3}
+  m_Script: {fileID: 11500000, guid: ca93998a22f174a62a0427d29dae8ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
+  id: 0
+  leftLives: 0
+  power: 0
+  spawnPoint: {x: 0, y: 0, z: 0}
+  respawnPoint: {x: 0, y: 0, z: 0}
+  isPlaying: 0

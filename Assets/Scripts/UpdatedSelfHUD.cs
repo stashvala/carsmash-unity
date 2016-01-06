@@ -12,7 +12,7 @@ public class UpdatedSelfHUD : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerData = gameObject.GetComponent<PlayerSelfManager> ();
+		playerData = gameObject.transform.parent.gameObject.GetComponent<PlayerSelfManager> ();
 		nameField.text = playerData.name;
 	}
 	

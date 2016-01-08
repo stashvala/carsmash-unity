@@ -52,8 +52,7 @@ public class LevelManager : MonoBehaviour {
 			} else {
 				playersHUD[i].SetActive(false);
 				players[i].SetActive(false);
-				//players[i].transform.position = inactivePosition;
-				players[i].transform.eulerAngles = Vector3.zero;
+				players[i].transform.position = inactivePosition;
 			}
 
 		}

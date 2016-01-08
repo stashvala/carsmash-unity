@@ -10,10 +10,11 @@ public class ParametrizedCarUserControl : MonoBehaviour {
 	public string vertical = "VerticalP1";
 	public string horizontal = "HorizontalP1";
 
-	private void Awake()
+	private void Start()
 	{
 		// get the car controller
-		m_Car = GetComponent<CarController>();
+		MonoBehaviour[] scripts = gameObject.GetComponents<MonoBehaviour>();
+		m_Car = gameObject.transform.GetComponent<CarController>();
 	}
 	
 	

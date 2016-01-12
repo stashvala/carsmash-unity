@@ -14,4 +14,8 @@ public class ButtonFunctions : MonoBehaviour {
 		GameManager.Instance.DoPauseResume ();
 	}
 
+	public void toggleSelfIsActive() {
+		gameObject.SetActive (!gameObject.activeSelf);
+	}
+
 }
